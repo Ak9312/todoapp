@@ -1,59 +1,50 @@
-bt = document.querySelector("#Button");
-ib = document.querySelector("#inputBox");
-oc = document.querySelector("#outputContainer");
-let i = 0;
-bt.addEventListener("click", () => {
-  const nu = document.createElement("div");
-  const nu2 = document.createElement("div");
-  //Edit
-  const ed = document.createElement("button");
-  ed.textContent = "Edit Task";
+let todoList = [];
+const MAX_TODO_ITEMS = 6;
+let addTask = document.querySelector(".AddTask");
 
-  //Delete
-  const dl = document.createElement("button");
+function renderRowContainter() {
+  // Clearing OutputContainer
+  const appContainer = document.querySelector(".AppContainer");
+  const outputContainer = document.querySelector(".OutputContainer");
+  appContainer.removeChild(outputContainer);
+  const newOutputContainer = document.createElement("div");
+  newOutputContainer.classList.add("OutputContainer");
+  appContainer.appendChild(newOutputContainer);
 
-  //Close Button
-  const cl = document.createElement("button");
+  // Generate Row Container based on todoList
+  todoList.map((item, index) => {
+    const rowContainer = document.createElement("div");
+    rowContainer.classList.add("RowContainer");
+    rowContainer.id = `row_${index}`;
+    newOutputContainer.appendChild(rowContainer);
+    //Adding Task Display Container
+    const taskDisplayContainer = document.createElement("div");
+    taskDisplayContainer.classList.add("TaskDisplayContainer");
+    const taskName = document.createElement("p");
+    taskName.textContent = `${index + 1}. ${item}`;
+    taskDisplayContainer.appendChild(taskName);
+    rowContainer.appendChild(taskDisplayContainer);
 
-  dl.textContent = "Delete Task";
+    //Add Task Edit Button Container
 
-  oc.appendChild(nu);
-  nu.appendChild(nu2);
-  nu.classList.add("pbtt");
-
-  nu2.classList.add("btt");
-
-  oc.style.border = "solid #000000";
-  i++;
-
-  nu2.textContent = i + "." + " " + ib.value;
-
-  // nu.textContent =  "sdfsdfsdfsdf";
-  nu2.appendChild(ed);
-  nu2.appendChild(dl);
-  ed.addEventListener("click", () => {
-    document.querySelector(".ed").style.display = "block";
-
-    oc.appendChild(cl);
-    cl.textContent = "Close Box"
-    document.querySelector(".ed").textContent = "Edit Task";
+    //Add Task Delete Button Container
   });
-  dl.addEventListener("click", () => {
-    document.querySelector(".delete").style.display = "block";
-    document.querySelector(".delete").textContent = "Delete Task";
-    oc.appendChild(cl);
-    cl.textContent = "Close Box"
-  });
- 
+}
 
-     if (cl.style.display != "none"|| document.querySelector(".delete").style.display != "none" ||document.querySelector(".ed").style.display != "none") {
-      cl.addEventListener("click", ()=> { cl.style.display = "none";
-               document.querySelector(".delete").style.display = "none";  
-               document.querySelector(".ed").style.display = "none";
-         })
-     }
+renderRowContainter();
 
-  ib.value = "";
-});
+function addTaskHandler() {
+  const inputBox = document.querySelector(".InputBox");
+  if (inputBox.value === "") {
+    alert("Please Enter Task");
+    return;
+  }
+  if (todoList.length === MAX_TODO_ITEMS) {
+    alert("Maximum limit of task reached!");
+    return;
+  }
+  todoList.push(inputBox.value);
+  renderRowContainter();
+}
 
-// dl.classList.add("btt");
+addTask.addEventListener("click", addTaskHandler);

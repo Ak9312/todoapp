@@ -7,12 +7,32 @@
     <link rel="stylesheet" href="./Styles.css" />
   </head>
   <body>
-    <div class="input">
-      <input type="text" id="inputBox" placeholder="Enter task" />
-      <button id="Button">+ Task</button>
-    </div>
-    <div id="outputContainer">
-
+    <div class="AppContainer">
+      <div class="TitleContainer">
+        <h2>Todo List</h2>
+      </div>
+      <div class="InputContainer">
+        <div class="InputBoxContainer">
+          <input type="text" class="InputBox"/>
+        </div>
+        <div class="AddTaskButtonContainer">
+          <button  class = "AddTask">+ Task</button>
+        </div>
+      </div>
+      <div class="OutputContainer">
+        <!-- THIS GOES IN JS -->
+        <div class="RowContainer" id="row_0">
+          <div class="TaskDisplayContainer">
+            <p>1. Task</p>
+          </div>
+          <div class="TaskEditButtonContainer">
+            <button id="taskedit_0">Edit</button>
+          </div>
+          <div class="TaskDeleteButtonContainer">
+            <button id="taskdelete_0">Delete</button>
+          </div>
+        </div>
+      </div>
     </div>
 
     <script src="Script.js"></script>
