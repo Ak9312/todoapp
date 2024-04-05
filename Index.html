@@ -9,22 +9,24 @@
   <body>
     <div class="AppContainer">
       <div class="TitleContainer">
-        <h2>Todo List</h2>
+        <h2>To do List</h2>
       </div>
       <div class="InputContainer">
         <div class="InputBoxContainer">
-          <input type="text" class="InputBox"/>
+          <input type="text" class="InputBox" />
         </div>
         <div class="AddTaskButtonContainer">
-          <button  class = "AddTask">+ Task</button>
+          <button class="AddTask">+ Task</button>
         </div>
+
       </div>
       <div class="OutputContainer">
+       
         <!-- THIS GOES IN JS -->
+       
+
         <div class="RowContainer" id="row_0">
-          <div class="TaskDisplayContainer">
-            <p>1. Task</p>
-          </div>
+          <div class="TaskDisplayContainer"></div>
           <div class="TaskEditButtonContainer">
             <button id="taskedit_0">Edit</button>
           </div>
@@ -33,8 +35,30 @@
           </div>
         </div>
       </div>
-    </div>
+<div class="DeleteConfirm">
+<div class="DeleteTitle"> Confirm Delete</div>
+<div class="DeleteBody"></div>
+<div class="DeleteTaskButtons">
+  <button class = "ConfirmDelete">Confirm</button>
+  <button class = "CancelDelete">Cancel</button>
+</div>
+</div>
+
+
+<div class="EditConfirm">
+<div class="EditTitle"> Confirm Edit</div>
+<div class="EditBody">
+  <input type = "text" class = "EditText">
+</div>
+<div class="EditTaskButtons">
+  <button class = "ConfirmEdit">Confirm</button>
+  <button class = "CancelEdit">Cancel</button>
+</div>
+</div>
+
+
 
     <script src="Script.js"></script>
   </body>
 </html>
+      

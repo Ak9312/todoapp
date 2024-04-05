@@ -3,23 +3,20 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-
 }
 .AppContainer {
- 
   display: flex;
   flex-direction: column;
   width: 50%;
   height: 80vh;
   font-family: Arial, Helvetica, sans-serif;
-  background-color:azure;
-  box-shadow: 0px 10px 24px 12px rgba(0,0,0,0.1);
+  background-color: azure;
+  box-shadow: 0px 10px 24px 12px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
 }
 
 .TitleContainer h2 {
   text-align: center;
-  
 }
 
 .InputContainer {
@@ -31,18 +28,13 @@ body {
 }
 
 .InputBoxContainer {
-  min-width : 50%;
+  min-width: 50%;
   max-width: 70%;
-  border: solid green;
 }
 .InputBoxContainer input {
-  padding:2px;
-  margin:0;
+  padding: 2px;
+  margin: 0;
   width: 90%;
-} 
-
-.AddTaskButtonContainer {
-  border: solid blue;
 }
 
 .AddTaskButtonContainer button {
@@ -54,7 +46,7 @@ body {
   margin-left: 5px;
   margin-right: 5px;
   margin-bottom: 10px;
-  border: solid brown;
+
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -75,3 +67,100 @@ body {
   margin-right: 10px;
   max-width: 20%;
 }
+
+
+.DeleteConfirm {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  background-color: rgba(0,0,0,0.1);
+  margin-left: 20vh;
+  margin-top: 10vh;
+  width: 350px;
+  height: 100px;
+
+}
+
+.DeleteTitle {
+
+  text-align: center;
+  
+  border: solid rgb(47, 5, 5);
+  min-width: 20vh;
+  max-width: 90vh;
+  min-height: 5vh;
+  max-height: 10vh;
+ background-color: #8ECAE6; 
+ color:white
+}
+
+
+.DeleteBody {
+  text-align: center;
+  margin-top: 2vh;
+}
+
+.DeleteTaskButtons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 5vh;
+  margin-right: 5vh;
+}
+
+
+
+
+.EditConfirm {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  background-color: rgba(0,0,0,0.1);
+  margin-left: 20vh;
+  margin-top: 10vh;
+  width: 350px;
+  height: 100px;
+
+}
+
+.EditTitle {
+
+  text-align: center;
+  
+  border: solid rgb(47, 5, 5);
+  min-width: 20vh;
+  max-width: 90vh;
+  min-height: 5vh;
+  max-height: 10vh;
+ background-color: #8ECAE6; 
+ color:white
+}
+
+.EditBody {
+  text-align: center;
+  margin-top: 2vh;
+}
+
+.EditTaskButtons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 5vh;
+  margin-right: 5vh;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+button {
+  cursor: pointer;
+}
+
