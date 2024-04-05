@@ -1,0 +1,36 @@
+.input {
+  margin: auto;
+  position: absolute;
+  top: 40%;
+  left: 40%;
+}
+
+#outputContainer {
+  margin: auto;
+  position: absolute;
+  top: 45%;
+  left: 40%;
+  width: 230px;
+  padding-top: 10vh;
+  max-height: 1000vh;
+
+  /* display: flex; */
+  /* justify-content: center; */
+}
+
+.pbtt {
+  display: flex;
+  flex-flow: row wrap;
+  column-gap: 100px;
+}
+
+.btt {
+  display: flex;
+  padding-bottom: 10vh;
+}
+
+button {
+  cursor: pointer;
+}
+
+
