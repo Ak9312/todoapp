@@ -36,6 +36,7 @@ function renderRowContainter() {
     const taskDisplayContainer = document.createElement("div");
     taskDisplayContainer.classList.add("TaskDisplayContainer");
     const taskName = document.createElement("p");
+
     taskName.textContent = `${index + 1}. ${item}`;
     taskDisplayContainer.appendChild(taskName);
     rowContainer.appendChild(taskDisplayContainer);
@@ -44,9 +45,11 @@ function renderRowContainter() {
     const taskEdit = document.createElement("div");
     taskEdit.classList.add("TaskEditButtonContainer");
     const editButton = document.createElement("button");
-    editButton.textContent = "Edit";
+    editButton.classList.add("fa-solid", "fa-pen-to-square");
+
     editButton.id = "taskedit_" + `${index}`;
     editButton.addEventListener("click", editTaskHandler);
+
     taskEdit.appendChild(editButton);
     rowContainer.appendChild(taskEdit);
 
@@ -54,8 +57,9 @@ function renderRowContainter() {
     const taskDelete = document.createElement("div");
     taskDelete.classList.add("TaskDeleteButtonContainer");
     const deleteButton = document.createElement("button");
-    deleteButton.textContent = "Delete";
+
     deleteButton.id = "taskDelete_" + `${index}`;
+    deleteButton.classList.add("fa-solid", "fa-trash");
     deleteButton.addEventListener("click", deleteTaskHandler);
     taskDelete.appendChild(deleteButton);
     rowContainer.appendChild(taskDelete);

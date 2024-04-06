@@ -39,6 +39,7 @@ body {
 
 .AddTaskButtonContainer button {
   margin-right: 10px;
+  background-color: greenyellow
 }
 
 .RowContainer {
@@ -46,7 +47,6 @@ body {
   margin-left: 5px;
   margin-right: 5px;
   margin-bottom: 10px;
-
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -59,6 +59,14 @@ body {
 
 button {
   cursor: pointer;
+}
+
+.TaskEditButtonContainer {
+  padding-top: 2.5%;
+}
+
+.TaskDeleteButtonContainer {
+  padding-top: 2.5%;
 }
 
 .EditModalContainer {
@@ -122,6 +130,31 @@ button {
   margin-right: 5px;
 }
 
+
+.EditModalButtonConfirm {
+  background-color: green;
+  width:40%;
+  height: 150%;
+  color: white;
+  border-radius: 10px;
+  }
+  
+  .EditModalButtonCancel {
+    background-color: red;
+    width:40%;
+    height: 150%;
+    color: white;
+    border-radius: 10px;
+    }
+
+
+
+
+
+
+
+
+
 /* Delete Containers */
 .DeleteModalContainer {
   display: none;
@@ -177,10 +210,28 @@ button {
 
 .DeleteModalButtons {
   width: 70%;
+  height: 50%;
   margin-top: 10px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   margin-left: 5px;
   margin-right: 5px;
+
 }
+
+.DeleteModalButtonConfirm {
+background-color: green;
+width:40%;
+height: 150%;
+color: white;
+border-radius: 10px;
+}
+
+.DeleteModalButtonCancel {
+  background-color: red;
+  width:40%;
+  height: 150%;
+  color: white;
+  border-radius: 10px;
+  }
