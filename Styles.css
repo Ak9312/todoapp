@@ -38,9 +38,18 @@ body {
 }
 
 .AddTaskButtonContainer button {
-  margin-right: 10px;
-  background-color: greenyellow
+  margin-right: 150px;
+
+  background-color: greenyellow;
+  width: 100%;
+  
 }
+
+
+.AddTaskButtonContainer button:hover {
+  background-color: #fffd8d;
+}
+
 
 .RowContainer {
   margin-top: 10px;
@@ -65,9 +74,13 @@ button {
   padding-top: 2.5%;
 }
 
+
+
 .TaskDeleteButtonContainer {
   padding-top: 2.5%;
 }
+
+
 
 .EditModalContainer {
   display: none;
@@ -132,26 +145,32 @@ button {
 
 
 .EditModalButtonConfirm {
-  background-color: green;
+  background-color: greenyellow;
   width:40%;
   height: 150%;
   color: white;
   border-radius: 10px;
+  color: black
   }
   
   .EditModalButtonCancel {
-    background-color: red;
+    background-color: lightcoral;
     width:40%;
     height: 150%;
     color: white;
     border-radius: 10px;
+    color: black;
     }
 
 
+    .EditModalButtonConfirm:hover {
+      background-color: #fffd8d;
+    }
 
 
-
-
+    .EditModalButtonCancel:hover {
+      background-color: #fffd8d;
+    }
 
 
 
@@ -221,17 +240,55 @@ button {
 }
 
 .DeleteModalButtonConfirm {
-background-color: green;
+ background-color: greenyellow;
 width:40%;
 height: 150%;
-color: white;
+color: black;
 border-radius: 10px;
 }
 
 .DeleteModalButtonCancel {
-  background-color: red;
+  background-color: lightcoral;
   width:40%;
   height: 150%;
   color: white;
   border-radius: 10px;
+  color: black;
+
+  }
+  
+  .DeleteModalButtonConfirm:hover {
+    background-color: #fffd8d;
+  }
+
+  .DeleteModalButtonCancel:hover {
+    background-color: #fffd8d;
+  }
+
+
+  .fa-solid:hover {
+    color: #e1d4fa
+  }
+
+  .fa-pen-to-square:hover {
+    color: #e1d4fa
+  }
+
+
+  .fa-trash:hover{
+    color:#e1d4fa
+  } 
+
+
+  .fa-pen-to-square {
+    border:0;
+    background-color: transparent;
+    color: cornflowerblue;
+
+  }
+
+  .fa-trash{
+    border:0;
+    background-color: transparent;
+    color: lightcoral;
   }

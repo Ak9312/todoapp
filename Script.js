@@ -75,7 +75,10 @@ function addTaskHandler() {
     return;
   }
   if (todoList.length === MAX_TODO_ITEMS) {
+    inputBox.value = "";
     alert("Maximum limit of task reached!");
+   
+
     return;
   }
   todoList.push(inputBox.value);
