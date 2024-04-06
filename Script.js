@@ -1,15 +1,20 @@
 let todoList = [];
 const MAX_TODO_ITEMS = 6;
+let currentSelectedIndex = -1;
 let addTask = document.querySelector(".AddTask");
-let confirmDelete = document.querySelector(".DeleteConfirm");
-let deleteItem = document.querySelector(".DeleteBody")
-let deleteConfirmButton = document.querySelector(".ConfirmDelete")
-let deleteCancelButton = document.querySelector(".CancelDelete")
-let editItem = document.querySelector(".EditConfirm");
-let editValue = document.querySelector(".EditText");
-let editConfirmButton = document.querySelector(".ConfirmEdit")
-let editCancelButton = document.querySelector(".CancelEdit")
+let editModalContainer = document.querySelector(".EditModalContainer");
+let editModalInput = document.querySelector(".EditModalInput");
+let editModalButtonConfirm = document.querySelector(".EditModalButtonConfirm");
+let editModalButtonCancel = document.querySelector(".EditModalButtonCancel");
 
+let deleteModalContainer = document.querySelector(".DeleteModalContainer");
+let deleteModalInput = document.querySelector(".DeleteModalInput");
+let deleteModalButtonConfirm = document.querySelector(
+  ".DeleteModalButtonConfirm"
+);
+let deleteModalButtonCancel = document.querySelector(
+  ".DeleteModalButtonCancel"
+);
 
 function renderRowContainter() {
   // Clearing OutputContainer
@@ -26,6 +31,7 @@ function renderRowContainter() {
     rowContainer.classList.add("RowContainer");
     rowContainer.id = `row_${index}`;
     newOutputContainer.appendChild(rowContainer);
+
     //Adding Task Display Container
     const taskDisplayContainer = document.createElement("div");
     taskDisplayContainer.classList.add("TaskDisplayContainer");
@@ -36,45 +42,23 @@ function renderRowContainter() {
 
     //Add Task Edit Button Container
     const taskEdit = document.createElement("div");
-
     taskEdit.classList.add("TaskEditButtonContainer");
     const editButton = document.createElement("button");
     editButton.textContent = "Edit";
     editButton.id = "taskedit_" + `${index}`;
+    editButton.addEventListener("click", editTaskHandler);
     taskEdit.appendChild(editButton);
     rowContainer.appendChild(taskEdit);
+
     //Add Task Delete Button Container
     const taskDelete = document.createElement("div");
-
     taskDelete.classList.add("TaskDeleteButtonContainer");
     const deleteButton = document.createElement("button");
     deleteButton.textContent = "Delete";
     deleteButton.id = "taskDelete_" + `${index}`;
+    deleteButton.addEventListener("click", deleteTaskHandler);
     taskDelete.appendChild(deleteButton);
     rowContainer.appendChild(taskDelete);
-
-deleteButton.addEventListener("click", ()=> {
-  confirmDelete.style.display = "block";
-  deleteItem.textContent =  ` ${item}`;
-})
-
-deleteCancelButton.addEventListener("click", () => {
-  confirmDelete.style.display = "none";
-
-})
-
-editButton.addEventListener("click", () => {
-  editItem.style.display = "block";
-  editValue.value =  ` ${item}`;
-})
-
-
-editCancelButton.addEventListener("click", () => {
-  editItem.style.display = "none";
-
-})
-
-
   });
 }
 
@@ -91,10 +75,55 @@ function addTaskHandler() {
     return;
   }
   todoList.push(inputBox.value);
-  renderRowContainter();
   inputBox.value = "";
+  renderRowContainter();
+}
+
+function editTaskHandler(event) {
+  const buttonId = event.target.id;
+  currentSelectedIndex = buttonId.split("_")[1];
+  editModalContainer.style.display = "block";
+  editModalInput.value = todoList[currentSelectedIndex];
+}
+
+function editModalButtonConfirmHandler() {
+  const newEditedTaskValue = editModalInput.value;
+  todoList[currentSelectedIndex] = newEditedTaskValue;
+  editModalContainer.style.display = "none";
+  renderRowContainter();
+}
+
+function editModalButtonCancelHandler() {
+  editModalContainer.style.display = "none";
+}
+
+function deleteTaskHandler(event) {
+  const buttonId = event.target.id;
+  currentSelectedIndex = buttonId.split("_")[1];
+  deleteModalContainer.style.display = "block";
+  deleteModalInput.textContent = todoList[currentSelectedIndex];
+}
+
+function deleteModalButtonConfirmHandler() {
+  todoList.splice(currentSelectedIndex, 1);
+  deleteModalContainer.style.display = "none";
+  renderRowContainter();
+}
+
+function deleteModalButtonCancelHandler() {
+  deleteModalContainer.style.display = "none";
 }
 
 addTask.addEventListener("click", addTaskHandler);
 
+editModalButtonCancel.addEventListener("click", editModalButtonCancelHandler);
+editModalButtonConfirm.addEventListener("click", editModalButtonConfirmHandler);
 
+deleteModalButtonConfirm.addEventListener(
+  "click",
+  deleteModalButtonConfirmHandler
+);
+deleteModalButtonCancel.addEventListener(
+  "click",
+  deleteModalButtonCancelHandler
+);

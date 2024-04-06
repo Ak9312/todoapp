@@ -57,110 +57,130 @@ body {
   max-width: 60%;
 }
 
-.TaskEditButtonContainer {
-  margin-top: 15px;
-  max-width: 20%;
-}
-
-.TaskDeleteButtonContainer {
-  margin-top: 15px;
-  margin-right: 10px;
-  max-width: 20%;
-}
-
-
-.DeleteConfirm {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  background-color: rgba(0,0,0,0.1);
-  margin-left: 20vh;
-  margin-top: 10vh;
-  width: 350px;
-  height: 100px;
-
-}
-
-.DeleteTitle {
-
-  text-align: center;
-  
-  border: solid rgb(47, 5, 5);
-  min-width: 20vh;
-  max-width: 90vh;
-  min-height: 5vh;
-  max-height: 10vh;
- background-color: #8ECAE6; 
- color:white
-}
-
-
-.DeleteBody {
-  text-align: center;
-  margin-top: 2vh;
-}
-
-.DeleteTaskButtons {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-left: 5vh;
-  margin-right: 5vh;
-}
-
-
-
-
-.EditConfirm {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  background-color: rgba(0,0,0,0.1);
-  margin-left: 20vh;
-  margin-top: 10vh;
-  width: 350px;
-  height: 100px;
-
-}
-
-.EditTitle {
-
-  text-align: center;
-  
-  border: solid rgb(47, 5, 5);
-  min-width: 20vh;
-  max-width: 90vh;
-  min-height: 5vh;
-  max-height: 10vh;
- background-color: #8ECAE6; 
- color:white
-}
-
-.EditBody {
-  text-align: center;
-  margin-top: 2vh;
-}
-
-.EditTaskButtons {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-left: 5vh;
-  margin-right: 5vh;
-}
-
-
-
-
-
-
-
-
-
-
-
-
 button {
   cursor: pointer;
 }
 
+.EditModalContainer {
+  display: none;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 10;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.EditModalContentContainer {
+  background-color: white;
+  margin: 10% auto;
+
+  width: 40%;
+  height: 30%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+}
+
+.EditModalTitle {
+  width: 100%;
+  height: 30%;
+  background-color: cornflowerblue;
+  color: white;
+  text-align: center;
+  margin: 0;
+}
+
+.EditModalBody {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+}
+
+.EditModalInputBox {
+  width: 80%;
+  margin-bottom: 10px;
+}
+
+.EditModalInputBox input {
+  width: 100%;
+}
+
+.EditModalButtons {
+  width: 70%;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+/* Delete Containers */
+.DeleteModalContainer {
+  display: none;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 10;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.DeleteModalContentContainer {
+  background-color: white;
+  margin: 10% auto;
+
+  width: 40%;
+  height: 30%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+}
+
+.DeleteModalTitle {
+  width: 100%;
+  height: 30%;
+  background-color: lightcoral;
+  color: white;
+  text-align: center;
+  margin: 0;
+}
+
+.DeleteModalBody {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+}
+
+.DeleteModalInputBox {
+  width: 80%;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.DeleteModalInputBox p {
+  width: 100%;
+}
+
+.DeleteModalButtons {
+  width: 70%;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-left: 5px;
+  margin-right: 5px;
+}
